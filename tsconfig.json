@@ -1,0 +1,28 @@
+{
+  // https://github.com/TypeStrong/ts-node/issues/138#issuecomment-926322588
+  "ts-node": {
+    "transpileOnly": true,
+    "require": [
+      "typescript-transform-paths/register",
+      "tsconfig-paths/register"
+    ]
+  },
+  "compilerOptions": {
+    "target": "es2020",
+    "sourceMap": true,
+    "module": "commonjs",
+    "strict": true,
+    "esModuleInterop": true,
+    "outDir": "dist",
+    "declaration": true,
+    "baseUrl": ".",
+    "paths": {
+      "@app/*": ["src/*"]
+    },
+    "plugins": [
+      { "transform": "typescript-transform-paths" }
+    ]
+  },
+  "include": ["./scripts", "./test", "./typechain", "./src"],
+  "files": ["./hardhat.config.ts"]
+}
